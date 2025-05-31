@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.18+ MCBE FSG</title>
+  <link rel="stylesheet" href="bfsg.css">
+  <link rel="icon" type="image/x-icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/53371/cold-face-emoji-clipart-xl.png">
+  <script src="bfsg.js" defer></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <h1><a id="title" >Bastion FSG</a></h1>
+    <h2>
+      <a id="fb" href="https://filteredseed.glitch.me/">Back To Main Page</a>
+    </h2>
+    
+    <h3 id="seedcount">Total Seeds: 0</h3>
+    <div class="dropdown">
+      <button class="dropdown-button">Theme Selector</button>
+      <div class="dropdown-content">
+        <label class="label">Color 1:</label>
+        <input type="color" class="color-picker" id="color1" value="#4285f4"><br>
+        <label class="label">Color 2:</label>
+        <input type="color" class="color-picker" id="color2" value="#ff7d00"><br>
+        <button id="reset-colors">Reset Colors</button>
+      </div>
+    </div>
+    <h3>
+      <a id="lb" target="_blank" href="https://docs.google.com/spreadsheets/d/1-WGGYXM8AvjYBBcE-pym6rCz_XgeKptJByb3kIVJxdU/edit#gid=1639635632">Leaderboard</a>
+      <a id="sr" target="_blank" href="https://discord.gg/PHh9kpJyMw">Submit Your Runs</a>
+      <a id="rs" href="bfsgreport.html">Report a Seed</a>
+      
+    </h3>
+    <div>
+      <p>Enter a username if you want. (helps with verification sometimes)<br>
+        <input id="userNameThing" type="text" name="Username" value="">
+      </p>
+      <button class="button-85" onclick="generateSeed()"><b>Generate Seed</b></button><br><br><br>
+      <i onclick="copy()">Click to Copy Seed</i>
+    </div>
+    <br>
+      
+    <br><br>
+  </div>
+</body>
+</html>
