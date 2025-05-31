@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.18+ MCBE FSG</title>
+  <link rel="stylesheet" href="bfsg.css">
+  <link rel="icon" type="image/x-icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/53371/cold-face-emoji-clipart-xl.png">
+  <script src="bfsg.js" defer></script>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+     <h1><a id="title" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Report a Seed</a></h1>
+    <div class="dropdown">
+      <button class="dropdown-button">Theme Selector</button>
+      <div class="dropdown-content">
+        <label class="label">Color 1:</label>
+        <input type="color" class="color-picker" id="color1" value="#4285f4"><br>
+        <label class="label">Color 2:</label>
+        <input type="color" class="color-picker" id="color2" value="#ff7d00">
+        <button id="reset-colors">Reset Colors</button>
+      </div>
+    </div>
+   
+        <h3>
+      <a id="lb" href="bfsg.html">Back to Generator</a>
+    </h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc1lkpHsoEgAe26Ua-YVdSFB_c02bR3OLqOv8537FA3K0D87g/viewform?embedded=true" width="1920" height="1080" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+</body>
+</html>
