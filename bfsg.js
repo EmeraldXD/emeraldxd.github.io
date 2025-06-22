@@ -13908,7 +13908,7 @@ var seedCountElement = document.getElementById("seedcount");
 var lastGenerateTime = 0;
 var generateInterval = 10000;
 var intervalId;
-var usernameElement =document.getElementById("userNameThing")
+var usernameElement = document.getElementById("userNameThing")
 function encryptString(str) {
     let encrypted = '';
     for (let i = 0; i < str.length; i++) {
