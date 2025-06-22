@@ -14050,7 +14050,7 @@ function sendDataToGoogleScript(seed, encryptedString, timeZone, usernameElement
         seed: seed,
         encryptedString: "'" + encryptedString,
         time: timeZone,
-        username: usernameElement.value
+        username: usernameElement
     };
 
     fetch('https://script.google.com/macros/s/AKfycbyKJsCsg-tOZMoXFjjqxZYr3S0HpTHV6YKfgYXF1RbJEgCdwak1UZdktMT4gRbvyeMU/exec', {
