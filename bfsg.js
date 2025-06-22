@@ -13936,7 +13936,7 @@ function generateSeed() {
         seedElement.textContent = seed;
         seedElement.style.color = getRandomColor();
      
-        sendDataToGoogleScript(seed, encryptedString, timeZone, usernameElement.value.toString());
+        sendDataToGoogleScript(seed, encryptedString, timeZone, usernameElement);
         
     
         lastGenerateTime = currentTime;
@@ -14049,7 +14049,7 @@ function sendDataToGoogleScript(seed, encryptedString, timeZone, username) {
         seed: seed,
         encryptedString: "'" + encryptedString,
         time: timeZone,
-        username: username
+        username: username.toString()
     };
 
     fetch('https://script.google.com/macros/s/AKfycbyTnrS_f23dcxBpbIxY_t_0Yebzstd_f2xr8bF3jEQm4f8F2epbujZZNAnXZznCAh4j/exec', {
