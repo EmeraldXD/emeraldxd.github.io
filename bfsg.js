@@ -13929,6 +13929,7 @@ function generateSeed() {
         var n = Math.floor(Math.random() * seeds.length);
 
         const seed = seeds[n];
+        const username = usernameElement.value;
         const time = new Date();
         const timeZone = new Date().toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(' ')[2];
         const combinedString = combineInfo(seed, time, time.toLocaleTimeString('en-US'));
@@ -13936,7 +13937,7 @@ function generateSeed() {
         seedElement.textContent = seed;
         seedElement.style.color = getRandomColor();
      
-        sendDataToGoogleScript(seed, encryptedString, timeZone);
+        sendDataToGoogleScript(seed, encryptedString, timeZone, username);
         
     
         lastGenerateTime = currentTime;
