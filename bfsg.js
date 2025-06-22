@@ -13936,7 +13936,7 @@ function generateSeed() {
         seedElement.textContent = seed;
         seedElement.style.color = getRandomColor();
      
-        sendDataToGoogleScript(seed, encryptedString, timeZone, usernameElement.value);
+        sendDataToGoogleScript(seed, encryptedString, timeZone, usernameElement.value.toString());
         
     
         lastGenerateTime = currentTime;
