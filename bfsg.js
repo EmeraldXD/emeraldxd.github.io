@@ -13929,7 +13929,6 @@ function generateSeed() {
         var n = Math.floor(Math.random() * seeds.length);
 
         const seed = seeds[n];
-        const username = usernameElement.value;
         const time = new Date();
         const timeZone = new Date().toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(' ')[2];
         const combinedString = combineInfo(seed, time, time.toLocaleTimeString('en-US'));
@@ -13937,7 +13936,7 @@ function generateSeed() {
         seedElement.textContent = seed;
         seedElement.style.color = getRandomColor();
      
-        sendDataToGoogleScript(seed, encryptedString, timeZone, username);
+        sendDataToGoogleScript(seed, encryptedString, timeZone);
         
     
         lastGenerateTime = currentTime;
@@ -14045,12 +14044,11 @@ function updateSeedCount() {
 }
 
 
-function sendDataToGoogleScript(seed, encryptedString, timeZone, username) {
+function sendDataToGoogleScript(seed, encryptedString, timeZone) {
     var data = {
         seed: seed,
         encryptedString: "'" + encryptedString,
         time: timeZone,
-        username: username
     };
 
     fetch('https://script.google.com/macros/s/AKfycbyKJsCsg-tOZMoXFjjqxZYr3S0HpTHV6YKfgYXF1RbJEgCdwak1UZdktMT4gRbvyeMU/exec', {
