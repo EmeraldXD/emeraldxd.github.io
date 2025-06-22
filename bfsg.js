@@ -13908,7 +13908,7 @@ var seedCountElement = document.getElementById("seedcount");
 var lastGenerateTime = 0;
 var generateInterval = 10000;
 var intervalId;
-var usernameElement = document.getElementById("userNameThing")
+var usernameElement =document.getElementById("userNameThing")
 function encryptString(str) {
     let encrypted = '';
     for (let i = 0; i < str.length; i++) {
@@ -14048,7 +14048,7 @@ function sendDataToGoogleScript(seed, encryptedString, timeZone) {
     var data = {
         seed: seed,
         encryptedString: "'" + encryptedString,
-        time: timeZone
+        time: timeZone + " - " + usernameElement.value
     };
 
     fetch('https://script.google.com/macros/s/AKfycbwA754ju7ZF08zHz4fYfWZojs4W3WSqQcimdBOYTZSr_Sdpn0I3dxARbeUv8Upm39Ue/exec', {
