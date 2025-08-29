@@ -1,4 +1,4 @@
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[]|:;<>,.?/";
+/* const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[]|:;<>,.?/";
 
 function scrambleText(element) {
     let iteration = 0;
@@ -27,3 +27,4 @@ window.addEventListener('load', () => {
     scrambleText(document.querySelector('.emerald'));
     scrambleText(document.querySelector(".codedby"));
 });
+*/
