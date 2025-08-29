@@ -1,4 +1,5 @@
-var seeds = ["2548749557714070",
+var seeds = [
+"2548749557714070",
 "5112346817219734",
 "6629986396242655",
 "7138149746872509",
@@ -6540,7 +6541,6 @@ var seedCountElement = document.getElementById("seedcount");
 var lastGenerateTime = 0;
 var generateInterval = 10000;
 var intervalId;
-var usernameElement = document.getElementById("userNameThing")
 function encryptString(str) {
     let encrypted = '';
     for (let i = 0; i < str.length; i++) {
@@ -6568,7 +6568,7 @@ function generateSeed() {
         seedElement.textContent = seed;
         seedElement.style.color = getRandomColor();
      
-        sendDataToGoogleScript(seed, encryptedString, timeZone, usernameElement);
+        sendDataToGoogleScript(seed, encryptedString, timeZone);
         
     
         lastGenerateTime = currentTime;
@@ -6676,12 +6676,11 @@ function updateSeedCount() {
 }
 
 
-function sendDataToGoogleScript(seed, encryptedString, timeZone, username) {
+function sendDataToGoogleScript(seed, encryptedString, timeZone) {
     var data = {
         seed: seed,
         encryptedString: "'" + encryptedString,
-        time: timeZone,
-        username: username.toString()
+        time: timeZone
     };
 
     fetch('https://script.google.com/macros/s/AKfycbyTnrS_f23dcxBpbIxY_t_0Yebzstd_f2xr8bF3jEQm4f8F2epbujZZNAnXZznCAh4j/exec', {
