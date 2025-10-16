@@ -129,30 +129,46 @@
         .padStart(3, '0')}`;
     }
 
-    document.getElementById('retimeBtn').addEventListener('click', () => {
+    function extractFrameValue(text) {
       try {
-        const startData = JSON.parse(startInput.value);
-        const endData = JSON.parse(endInput.value);
-
-        const startFrame = parseFloat(startData.vct || startData.cmt || "0");
-        const endFrame = parseFloat(endData.vct || endData.cmt || "0");
-
-        if (isNaN(startFrame) || isNaN(endFrame)) {
-          output.textContent = "⚠️ Invalid frame data.";
-          output.classList.remove("glow");
-          return;
-        }
-
-        const totalTimeSec = endFrame - startFrame;
-        const totalTimeFormatted = formatTime(totalTimeSec);
-
-        const modNote = `Mod Note: Retimed (Start Frame: ${startFrame}, End Frame: ${endFrame}, FPS: ${fps}, Total Time: ${totalTimeFormatted})`;
-        output.textContent = modNote;
-        output.classList.add("glow");
+        const json = JSON.parse(text);
+        return json.vct || json.cmt || '';
       } catch {
-        output.textContent = "⚠️ Invalid JSON.";
-        output.classList.remove("glow");
+        // fallback: try to find vct manually
+        const match = text.match(/"vct"\s*:\s*"([\d.]+)"/) || text.match(/"cmt"\s*:\s*"([\d.]+)"/);
+        return match ? match[1] : '';
       }
+    }
+
+    function autoClean(inputEl) {
+      inputEl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const frame = extractFrameValue(inputEl.value.trim());
+          if (frame) inputEl.value = frame;
+        }
+      });
+    }
+
+    autoClean(startInput);
+    autoClean(endInput);
+
+    document.getElementById('retimeBtn').addEventListener('click', () => {
+      const startFrame = parseFloat(startInput.value);
+      const endFrame = parseFloat(endInput.value);
+
+      if (isNaN(startFrame) || isNaN(endFrame)) {
+        output.textContent = "⚠️ Invalid frame data.";
+        output.classList.remove("glow");
+        return;
+      }
+
+      const totalTimeSec = endFrame - startFrame;
+      const totalTimeFormatted = formatTime(totalTimeSec);
+
+      const modNote = `Mod Note: Retimed (Start Frame: ${startFrame}, End Frame: ${endFrame}, FPS: ${fps}, Total Time: ${totalTimeFormatted})`;
+      output.textContent = modNote;
+      output.classList.add("glow");
     });
 
     document.getElementById('clearBtn').addEventListener('click', () => {
