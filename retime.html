@@ -20,18 +20,19 @@
     }
 
     textarea {
-      width: 90%;
-      max-width: 800px;
-      height: 140px;
+      width: 85%;
+      max-width: 700px;
+      height: 85px;
       background: rgba(0, 50, 40, 0.8);
       color: #ccffee;
       border: 1px solid #00ffbf55;
       border-radius: 8px;
-      padding: 10px;
+      padding: 8px;
       font-family: monospace;
       resize: vertical;
       transition: all 0.2s;
-      box-shadow: 0 0 10px #00382b;
+      box-shadow: 0 0 8px #00382b;
+      font-size: 13px;
     }
 
     textarea:focus {
@@ -78,23 +79,26 @@
 
     .output {
       background: rgba(0, 40, 32, 0.85);
-      border: 1px solid #00ffbf33;
-      padding: 15px;
+      border: 1px solid #00ffbf55;
+      padding: 20px;
       width: 90%;
-      max-width: 800px;
-      border-radius: 8px;
+      max-width: 850px;
+      border-radius: 10px;
       word-break: break-word;
       font-family: monospace;
       color: #b5ffe3;
-      box-shadow: inset 0 0 10px #00382b;
+      box-shadow: inset 0 0 12px #004a38;
       transition: 0.2s ease;
-      min-height: 40px;
+      min-height: 70px;
       text-align: center;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
     }
 
     .output.glow {
-      box-shadow: 0 0 15px #00ffbfaa, inset 0 0 10px #004a38;
+      box-shadow: 0 0 20px #00ffbfaa, inset 0 0 15px #004a38;
       border-color: #00ffbf77;
+      color: #d7ffee;
     }
   </style>
 </head>
@@ -134,7 +138,6 @@
         const json = JSON.parse(text);
         return json.vct || json.cmt || '';
       } catch {
-        // fallback: try to find vct manually
         const match = text.match(/"vct"\s*:\s*"([\d.]+)"/) || text.match(/"cmt"\s*:\s*"([\d.]+)"/);
         return match ? match[1] : '';
       }
@@ -163,10 +166,12 @@
         return;
       }
 
-      const totalTimeSec = endFrame - startFrame;
+      const startFrameCount = Math.round(startFrame * fps);
+      const endFrameCount = Math.round(endFrame * fps);
+      const totalTimeSec = (endFrameCount - startFrameCount) / fps;
       const totalTimeFormatted = formatTime(totalTimeSec);
 
-      const modNote = `Mod Note: Retimed (Start Frame: ${startFrame}, End Frame: ${endFrame}, FPS: ${fps}, Total Time: ${totalTimeFormatted})`;
+      const modNote = `Mod Note: Retimed (Start Frame: ${startFrameCount}, End Frame: ${endFrameCount}, FPS: ${fps}, Total Time: ${totalTimeFormatted})`;
       output.textContent = modNote;
       output.classList.add("glow");
     });
