@@ -10,12 +10,13 @@
       color: #eafff3;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start; /* Move content up */
       min-height: 100vh;
-      justify-content: center;
+      padding-top: 60px; /* Adjust this for more or less vertical offset */
       gap: 12px;
     }
 
@@ -80,7 +81,7 @@
     .output {
       background: rgba(0, 40, 32, 0.85);
       border: 1px solid #00ffbf55;
-      padding: 20px;
+      padding: 24px;
       width: 90%;
       max-width: 850px;
       border-radius: 10px;
@@ -89,10 +90,11 @@
       color: #b5ffe3;
       box-shadow: inset 0 0 12px #004a38;
       transition: 0.2s ease;
-      min-height: 70px;
+      min-height: 80px;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       letter-spacing: 0.5px;
+      margin-top: 8px;
     }
 
     .output.glow {
